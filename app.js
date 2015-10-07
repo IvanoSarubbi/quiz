@@ -192,6 +192,7 @@ $(".result-final").click(function() {
 		
 		
 		if(numberCorrect <= 2) {
+			//$(".quizBody").text("You got" + " " + numberCorrect + " " + "correct answers");
 			$(".gif1").show();
 		}else{
 			$(".gif2").show();
