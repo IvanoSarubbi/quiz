@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script src="app.js"></script>
+	
+	<title>Pixar Quiz</title>
+
+</head>
+<body>
+	
+   <div class = "main">
+		<div class="pixar">
+		   <h2 class="title">The <h2 class="title2">•Pixar•</h2> <h2 class="title3">Quiz</h2>	
+		</div> 
+
+
+	<div class="btn">
+		<a href='#' class="button"><i class="fa fa-arrow-down"></i></a>
+	</div>
+
+	<div class="quizBody">
+	<iframe src="images/giphy.gif" class="gif1" width="355" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+	<iframe src="images/gif2.gif" class="gif2" width="355" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<!-- Question/Answers -->
+<div class="quiz-container">
+	<h3>Question <span id="count">1</span> of 5</h3>
+
+	<div id="quiz"><h3></h3>
+	</div>
+<div id="answers">
+<input type="radio" name="choice" value="0" disabled="disabled"><br>
+<input type="radio" name="choice" value="1" disabled="disabled"><br>
+<input type="radio" name="choice" value="2" disabled="disabled"><br>
+<input type="radio" name="choice" value="3" disabled="disabled"><br>
+</div>
+	<h3>
+		<button class="submit" style="">Submit</button>
+		<button class="result" style="display: none;">Wrong!, Next Question</button>
+		<button class="result-final" style="display: none"></button>
+	</h3>
+</div>
+
+
+<div class="end" style="display: none">
+		<h3>Your Final Score is:</h3>
+		<h3>You got <span id="total-correct">0</span> out of 5 correct!</h3>
+		<button class="restart">Try Again</button>
+		
+		
+</div>
+</div>
+	
+	  
+		
+<!-- bottom images section -->
+	<div class="images"> 
+		<img src="images/inside.png" class="bg1">	
+		<img src="images/incredibles.png" class="bg3">
+		<img src="images/monsters.png" class="bg4">
+		<img src="images/toy.png" class="bg5">
+		<img src="images/walle.png" class="bg6">
+		<img src="images/eve.png" class="bg7">
+		<img src="images/brave.png" class="bg8">
+		<div style="max-width: 500px;" id="_giphy_PW24kUmUv3vlm"></div>
+
+
+
+	</div>
+
+   </div>
+
+</body>
+</html>
