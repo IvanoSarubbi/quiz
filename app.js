@@ -174,7 +174,7 @@ $(".submit").click(function() {
 $(".result").click(function(){
 	$(".result").hide();
 			$(".submit").show();
-		if (currentQuestion <= 3) {
+		if (currentQuestion <= 4) {
 			currentQuestion++;
 			showQuestion();
 			checkQuestion();
@@ -192,9 +192,10 @@ $(".result-final").click(function() {
 		
 		
 		if(numberCorrect <= 2) {
-			//$(".quizBody").text("You got" + " " + numberCorrect + " " + "correct answers");
+			$(".quizBody").prepend("You did not pass the test, you got" + " " + numberCorrect + " " + "correct answers<br>" );
 			$(".gif1").show();
 		}else{
+			$(".quizBody").prepend("Look at you! You got" + " " + numberCorrect + " " + "correct answers<br>" );
 			$(".gif2").show();
 		}
 	});
