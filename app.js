@@ -202,11 +202,11 @@ $(".result-final").click(function() {
 		if(numberCorrect <= 4) {
 			$(".quizBody").prepend("Sorry!! You did not pass the test...you only got" + " " + numberCorrect + " " + "correct answers<br>" );
 			$(".gif1").show();
-			$(".restart").fadeIn(200);
+			$(".restart").fadeIn(400);
 		}else{
 			$(".quizBody").prepend("Look at you! You got" + " " + numberCorrect + " " + "correct answers<br>" );
 			$(".gif2").show();
-			$(".restart").fadeIn(200);
+			$(".restart").fadeIn(400);
 		}
 	});
 
