@@ -20,7 +20,7 @@ $(document).ready(function(){
    }
 
    
-	$(".bg1, .bg3, .bg4, .bg5, .bg6, .bg7, .bg8, .quizBody, .gif1, .gif2").hide();
+	$(".bg1, .bg3, .bg4, .bg5, .bg6, .bg7, .bg8, .quizBody, .gif1, .gif2, .answers, .restart").hide();
 	$(function() {
     var state = true;
     $( ".button" ).click(function() {
@@ -78,31 +78,37 @@ var count = 1,
 
 var allQuestions = [{
     question: "In what year was Toy Story released?",
+    answer: "The first Toy Story movie was released in 1995",
     choices: ["1995", "1998", "1992", "2001"],
     correctAnswer: 0
 	}, 
 	{
     question: "What was Nemo's advnture companion's name?",
+    answer: "The correct answer is Dory",
     choices: ["Lucy", "Dory", "Nelly", "Dolly"],
     correctAnswer: 1
 	}, 
 	{
     question: "Where did the movie Ratatouille take place in?",
+    answer: "The movie took place in beautiful Paris",
     choices: ["Tokyo", "Paris", "Rome", "New York City"],
     correctAnswer: 1
 	}, 
 	{
     question: "What is Wall-E favorite hobby?",
+    answer: "Believe it or not but Wall-E favorite hobby is collecting things!",
     choices: ["Sleeping", "Reading", "Collection Things", "Drawing"],
     correctAnswer: 2
 	}, 
 	{
     question: "In the movie Cars what car model was Lightning McQueen?",
+    answer: "Lighting McQueen is a Red Racing Car",
     choices: ["Fiat", "Volvo", "Red Racing Car", "Toyota"],
     correctAnswer: 2
 	}, 
 	{	
     question: "What is the latest movie relased by Pixar?",
+    answer: "The latest movie relased by Pixar was Inside Out in 2015",
     choices: ["Toy Story 3", "Brave", "Monster University", "Inside Out"],
     correctAnswer: 3
 }];
@@ -142,33 +148,35 @@ var userChoice = function(){
 			$result.text('Correct, Next Question').show();
 		}
 		else {
+			$(".quiz-container").hide();
+			$(".answers").slideDown();
+			$(".answers").append('<h4>'+allQuestions[currentQuestion].answer + '</h4>');
 			$(".submit").hide();
 			$('input[type="radio"]').attr("disabled",true);
-			$result.text('Incorrect, Next Question').show();
+			$result.text('Next Question').show();
 		}
 }
 
-//restart the quiz
-var restart = function(){
-	function restart() {
-		count = 1;
-		currentQuestion = 0;
-		numberCorrect = 0;
-		$count.text(count);
-		$totalCorrect.text(numberCorrect);
-		$end.hide();
-		$(".quizBody").show();
-		$resultFinal.hide();
-		$(".submit").show();
-		loadQuestion();
-	}
-}
+
 
 showQuestion();
 
 //buttons functionality
+$(".restart").click(function(){
+	location.reload();
+});
+
+
 $(".submit").click(function() {
 	userChoice();
+});
+
+$(".close_button").click(function(){
+	$(".quiz-container").show();
+	$(".answers").slideUp();
+	$(".answers").children("h4").remove();
+	
+
 });
 	
 $(".result").click(function(){
@@ -191,12 +199,14 @@ $(".result-final").click(function() {
 		$(".quiz-container").hide();
 		
 		
-		if(numberCorrect <= 2) {
-			$(".quizBody").prepend("You did not pass the test, you got" + " " + numberCorrect + " " + "correct answers<br>" );
+		if(numberCorrect <= 4) {
+			$(".quizBody").prepend("Sorry!! You did not pass the test...you only got" + " " + numberCorrect + " " + "correct answers<br>" );
 			$(".gif1").show();
+			$(".restart").fadeIn(200);
 		}else{
 			$(".quizBody").prepend("Look at you! You got" + " " + numberCorrect + " " + "correct answers<br>" );
 			$(".gif2").show();
+			$(".restart").fadeIn(200);
 		}
 	});
 
